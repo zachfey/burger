@@ -11,16 +11,19 @@ var orm = {
     insertOne: function (burger_name, callback) {
         connection.query('INSERT INTO burgers (burger_namme, devoured) VALUES (?, false)', [burger_name], (err, res) => {
             if(err) throw err;
-            callback(res);
+            console.log(res);
+            callback();
         })
 
     },
 
     updateOne: function (id, callback) {
+        console.log ('we are updating id: ' + id)
         connection.query('UPDATE burgers SET devoured = true WHERE id = ?', [id], (err, res) => {
             if(err) throw err;
-            callback(res);
+            callback();
         })
+
     }
 }
 

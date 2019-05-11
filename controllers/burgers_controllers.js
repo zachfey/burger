@@ -6,21 +6,29 @@ var orm = require('../config/orm');
 
 module.exports = function routes(app) {
     app.get('/', (req, res) => {
-        orm.selectAll((response) => {
-            burgers = burgerSort(response) //returns burger object with availBurgs and eatenBurgs properties
-            res.render('index', burgers) 
+        burgerSort((burgers) => {
+            res.render('index', burgers)
         });
     }),
 
         app.post('/api/add', (req, res) => {
             orm.insertOne(req.params.burger_name, () => {
-                res.render('index', { burgers: response }) //TODO: I dont' think response will hav ethe burgers info
+                burgerSort((burgers) => {
+                    console.log('serving up new index');
+                    res.render('index', burgers)
+                });
             })
         }),
 
-        app.post('/api/update', (req, res) => {
-            orm.updateOne(req.params.id, () => {
-                res.render('index', { burgers: response }) //TODO: I dont' think response will hav ethe burgers info
+        app.put('/api/update', (req, res) => {
+
+            console.log(req.body);
+
+            orm.updateOne(req.body.id, () => {
+                burgerSort((burgers) => {
+                    console.log('serving up new index');
+                    res.redirect('/');
+                });
             })
         })
 }
