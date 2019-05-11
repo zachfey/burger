@@ -1,0 +1,33 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "A simple restaurant app to practice using handlebars and custom ORM",
+  "main": "index.js",
+  "scripts": {
+    "test": "console.log('burger')"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zachfey/burger.git"
+  },
+  "keywords": [
+    "handlebars",
+    "orm",
+    "nodejs",
+    "javascript",
+    "html",
+    "css",
+    "express"
+  ],
+  "author": "Zach Fey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zachfey/burger/issues"
+  },
+  "homepage": "https://github.com/zachfey/burger#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "mysql": "^2.17.1"
+  }
+}
