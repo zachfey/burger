@@ -2,7 +2,7 @@
   "name": "burger",
   "version": "1.0.0",
   "description": "A simple restaurant app to practice using handlebars and custom ORM",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "console.log('burger')"
   },
