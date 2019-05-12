@@ -31,7 +31,9 @@
             {{#each eatenBurgs }}
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">{{id}}. {{burger_name}}</h5>
+                    <h5 class="card-title">{{id}}. {{burger_name}}
+                        <button class='btn btn-danger delete' id={{id}}>Delete</button>
+                    </h5>
                 </div>
             </div>
             {{/each}}

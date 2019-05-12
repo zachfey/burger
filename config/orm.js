@@ -12,7 +12,7 @@ var orm = {
         connection.query('INSERT INTO burgers (burger_name, devoured) VALUES (?, false)', [burger_name], (err, res) => {
             if(err) throw err;
             console.log(res);
-            callback();
+            callback(res);
         })
 
     },
@@ -21,9 +21,16 @@ var orm = {
         console.log ('we are updating id: ' + id)
         connection.query('UPDATE burgers SET devoured = true WHERE id = ?', [id], (err, res) => {
             if(err) throw err;
-            callback();
+            callback(res);
         })
+    },
 
+    delteOne: function (id, callback) {
+        console.log('we are deleting id: ' + id)
+        connection.query('DELETE FROM burgers WHERE id = ?', [id], (err, res) => {
+            if(err) throw err;
+            callback(res)
+        })
     }
 }
 

@@ -31,6 +31,15 @@
         });
     })
 
+    $('.delete').on('click', function () {
+        console.log(this.id);
+        $.ajax({
+            type: 'POST',
+            url: '/api/delete',
+            data: { id: this.id }
+        });
+    })
+
     $('#newBurger').on('click', function () {
         event.preventDefault();
         //console.log($('#burgerName').val());

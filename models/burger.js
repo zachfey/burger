@@ -27,6 +27,12 @@ var burger = {
         orm.insertOne(name, (res) => {
             cb(res)
         })
+    },
+
+    delete: function (id, cb) {
+        orm.delteOne(id, (res) => {
+            cb(res)
+        })
     }
 }
 module.exports = burger
