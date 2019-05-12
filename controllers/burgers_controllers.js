@@ -12,23 +12,25 @@ module.exports = function routes(app) {
     }),
 
         app.post('/api/add', (req, res) => {
-            orm.insertOne(req.params.burger_name, () => {
-                burgerSort((burgers) => {
-                    console.log('serving up new index');
-                    res.render('index', burgers)
-                });
+            orm.insertOne(req.body.burger_name, () => {
+                // burgerSort((burgers) => {
+                //     console.log('serving up new index');
+                //     res.render('index', burgers)
+                // });
+                res.redirect('/');
             })
         }),
 
-        app.put('/api/update', (req, res) => {
+        app.post('/api/update', (req, res) => {
 
             console.log(req.body);
 
             orm.updateOne(req.body.id, () => {
-                burgerSort((burgers) => {
+                // burgerSort((burgers) => {
                     console.log('serving up new index');
-                    res.redirect('/');
-                });
+                //     res.redirect('/');
+                // });
+                res.redirect('/');
             })
         })
 }

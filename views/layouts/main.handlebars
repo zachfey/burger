@@ -25,9 +25,19 @@
     $('.devour').on('click', function () {
         console.log(this.id);
         $.ajax({
-            type: 'PUT',
+            type: 'POST',
             url: '/api/update',
             data: { id: this.id }
+        });
+    })
+
+    $('#newBurger').on('click', function () {
+        event.preventDefault();
+        //console.log($('#burgerName').val());
+        $.ajax({
+            type: 'POST',
+            url: '/api/add',
+            data: { burger_name: $('#burgerName').val() }
         });
     })
 </script>

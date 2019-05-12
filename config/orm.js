@@ -9,7 +9,7 @@ var orm = {
     },
 
     insertOne: function (burger_name, callback) {
-        connection.query('INSERT INTO burgers (burger_namme, devoured) VALUES (?, false)', [burger_name], (err, res) => {
+        connection.query('INSERT INTO burgers (burger_name, devoured) VALUES (?, false)', [burger_name], (err, res) => {
             if(err) throw err;
             console.log(res);
             callback();
