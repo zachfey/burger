@@ -1,0 +1,15 @@
+h1{
+    text-align: center;
+
+}
+
+.container, html, body{
+    background-image: url('../img/retina_wood.png')
+}
+
+#burgerimg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}

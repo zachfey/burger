@@ -1,15 +1,8 @@
-<style media="screen">
-    li {
-        height: 100px;
-        width: 100px;
-        color: red;
-        background-color: purple;
-        margin-bottom: 30px;
-    }
-</style>
 <div class='container'>
     <h1>Eat Da Burger</h1>
-
+    <br>
+    <img src='img/burger.png' alt ='burger' id='burgerimg'>
+    <br>
     <div class='row'>
 
         <div class='container col-5'>
@@ -39,17 +32,16 @@
             {{/each}}
         </div>
     </div>
-
+<br>
     <div class='row'>
         <div class='container col-12'>
 
             <form >
                 <div class="form-group">
-                    <label for="burgerName">New Burger</label>
                     <input type="text" class="form-control" id="burgerName" aria-describedby="burgerName"
                         placeholder="Enter a new burger to eat">
                 </div>
-                    <button class='btn btn-primary' id = 'newBurger' type="submit">Submit</button>
+                    <button class='btn btn-primary' id = 'newBurger' type="submit">Add</button>
                     <p>Enter a burger you want to eat, then hit 'Submit'</p>
                 </form>
         </div>
